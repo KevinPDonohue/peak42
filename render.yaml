@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: peak42
+    env: static
+    staticPublishPath: .
+    buildCommand: echo 'static'
+    pullRequestPreviewsEnabled: false
