@@ -660,88 +660,76 @@
 
 const BIRTHDAY = '2026-12-04';
 
-// Gym workouts — 3 session rotation
+// Gym workouts — 3 session rotation (~20 min each)
 const GYM_WORKOUTS = [
   {
     id: 'G1',
     name: 'Bench Day',
-    focus: 'Bench press + upper body',
+    focus: '~20 min · Bench press focus',
     exercises: [
-      { name: 'Air bike warm-up',   spec: '5 min',    note: 'Easy pace — get loose' },
-      { name: 'Bench Press',        spec: '4 × 5',    note: 'Work up to a heavy set of 5 · rest 3 min' },
-      { name: 'Incline DB Press',   spec: '3 × 8',    note: 'Moderate weight · builds bench strength' },
-      { name: 'Cable Row',          spec: '3 × 10',   note: 'Balance the pressing — squeeze at the top' },
-      { name: 'Tricep Pushdowns',   spec: '3 × 12',   note: 'Lockout strength for bench' },
-      { name: 'Push-up max set',    spec: '1 × max',  note: 'Record reps — benchmark marker' },
+      { name: 'Row warm-up',      spec: '2 min',   note: 'Easy pace — loosen up shoulders and back' },
+      { name: 'Bench Press',      spec: '3 × 5',   note: 'Heavy · 2 min rest between sets · this is your main lift' },
+      { name: 'Cable Row',        spec: '2 × 10',  note: 'Balance the pressing · superset with bench rest if possible' },
+      { name: 'Push-up max set',  spec: '1 × max', note: 'Record reps — benchmark marker · do this fresh' },
     ]
   },
   {
     id: 'G2',
     name: 'Squat Day',
-    focus: 'Squat + legs + conditioning',
+    focus: '~20 min · Squat focus',
     exercises: [
-      { name: 'Air bike warm-up',   spec: '5 min',    note: 'Easy pace' },
-      { name: 'Back Squat',         spec: '4 × 5',    note: 'Work up to a heavy set of 5 · rest 3 min' },
-      { name: 'Romanian Deadlift',  spec: '3 × 8',    note: 'Hamstring and posterior chain support' },
-      { name: 'Leg Press',          spec: '3 × 10',   note: 'Volume work after squats' },
-      { name: 'Air bike intervals', spec: '5 × 30s',  note: 'All-out 30s on / 90s off · builds row fitness too' },
-      { name: 'Plank hold',         spec: '2 × max',  note: 'Stop when hips drop · rest 60s between' },
+      { name: 'Air bike warm-up', spec: '2 min',   note: 'Easy pace — get legs warm' },
+      { name: 'Back Squat',       spec: '3 × 5',   note: 'Heavy · 2 min rest · drive through the floor' },
+      { name: 'Romanian Deadlift',spec: '2 × 8',   note: 'Moderate weight · hamstring and posterior chain' },
+      { name: 'Plank hold',       spec: '1 × max', note: 'Stop when hips drop · record time' },
     ]
   },
   {
     id: 'G3',
-    name: 'Full Body Day',
-    focus: 'Bench + Squat + Pull-ups',
+    name: 'Test Day',
+    focus: '~20 min · Pull-ups + row benchmark',
     exercises: [
-      { name: 'Row warm-up',        spec: '5 min',    note: 'Easy 500m to warm up — practice technique' },
-      { name: 'Bench Press',        spec: '3 × 6',    note: 'Moderate weight — not max effort today' },
-      { name: 'Back Squat',         spec: '3 × 6',    note: 'Moderate weight' },
-      { name: 'Pull-ups',           spec: '3 × max',  note: 'Dead hang start · rest 2 min · record total reps' },
-      { name: 'Push-up max set',    spec: '1 × max',  note: 'Record reps' },
-      { name: 'Row 500m',           spec: '1 × test', note: 'Hard effort — note your split time' },
+      { name: 'Row warm-up',      spec: '3 min',   note: 'Easy 500m — settle into your stroke' },
+      { name: 'Pull-up max set',  spec: '1 × max', note: 'Dead hang start · full ROM · record reps — benchmark' },
+      { name: 'Bench Press',      spec: '2 × 6',   note: 'Moderate weight — not max effort' },
+      { name: 'Row 500m hard',    spec: '1 × test',note: 'Hard effort · note your split — extrapolates to 2000m pace' },
     ]
   },
 ];
 
-// Home workouts — 3 session rotation
+// Home workouts — 3 session rotation (~20 min each)
 const HOME_WORKOUTS = [
   {
     id: 'H1',
     name: 'Push Day',
-    focus: 'Push-ups + planks + GTG pull-ups',
+    focus: '~20 min · Push-ups + GTG pull-ups',
     exercises: [
-      { name: 'GTG Pull-ups',       spec: '3 × 2',    note: 'Grease the groove — stop well short of failure · 60s rest' },
-      { name: 'Push-up sets',       spec: '5 × submx',note: 'Stop 3 reps short of failure each set · 60s rest' },
-      { name: 'Diamond push-ups',   spec: '3 × 10',   note: 'Tricep focus — slow and controlled' },
-      { name: 'Plank hold',         spec: '3 × max',  note: 'Stop when hips drop · record best time' },
-      { name: 'Side plank',         spec: '2 × 45s',  note: 'Each side · builds core for squat and bench' },
-      { name: 'Flexibility',        spec: '10 min',   note: 'Hip flexors · thoracic spine · shoulders' },
+      { name: 'GTG Pull-ups',     spec: '3 × 2',    note: 'Easy sets · stop well short of failure · 60s rest' },
+      { name: 'Push-up sets',     spec: '4 × submax',note: 'Stop 3 reps short of failure · 45s rest between sets' },
+      { name: 'Plank hold',       spec: '2 × max',  note: 'Stop when hips drop · rest 45s between' },
+      { name: 'Hip flexor stretch',spec: '2 × 60s', note: 'Each side — critical for squat depth' },
     ]
   },
   {
     id: 'H2',
     name: 'Pull Day',
-    focus: 'Pull-ups + GTG + core',
+    focus: '~20 min · Pull-ups + dumbbell rows',
     exercises: [
-      { name: 'GTG Pull-ups',       spec: '3 × 2',    note: 'Grease the groove — easy sets · 60–90s rest' },
-      { name: 'Max pull-up set',    spec: '1 × max',  note: 'Dead hang · full ROM · record reps — benchmark marker' },
-      { name: 'Inverted rows',      spec: '3 × max',  note: 'Use a table edge or low bar · great row substitute' },
-      { name: 'Push-ups',           spec: '3 × 20',   note: 'Maintenance volume · stay fresh' },
-      { name: 'Hollow body hold',   spec: '3 × 30s',  note: 'Core stability for pull-ups' },
-      { name: 'Flexibility',        spec: '10 min',   note: 'Posterior chain · hamstrings · lats' },
+      { name: 'GTG Pull-ups',     spec: '3 × 2',    note: 'Grease the groove — easy · 60s rest' },
+      { name: 'Max pull-up set',  spec: '1 × max',  note: 'Dead hang · full ROM · record reps — benchmark' },
+      { name: 'DB Bent-over Row', spec: '3 × 10',   note: 'Each arm · moderate weight · builds row strength' },
+      { name: 'Push-ups',         spec: '2 × 15',   note: 'Maintenance volume · controlled pace' },
     ]
   },
   {
     id: 'H3',
     name: 'Flow Day',
-    focus: 'Full body flexibility + volume',
+    focus: '~20 min · Mobility + volume',
     exercises: [
-      { name: 'GTG Pull-ups',       spec: '2 × 2',    note: 'Light grease the groove' },
-      { name: 'Push-up pyramid',    spec: '1-2-3-4-5',note: 'Rest 30s between rungs · go back down if feeling good' },
-      { name: 'Deep squat hold',    spec: '3 × 60s',  note: 'Builds squat mobility — use a doorframe for balance' },
-      { name: 'Hip flexor stretch', spec: '2 × 60s',  note: 'Each side — critical for squat depth' },
-      { name: 'Thoracic rotation',  spec: '2 × 60s',  note: 'Each side — opens up for bench' },
-      { name: 'Full flow',          spec: '10 min',   note: "Cat-cow · child's pose · forward fold · spinal twist" },
+      { name: 'GTG Pull-ups',     spec: '2 × 2',    note: 'Light touch · easy' },
+      { name: 'Push-up pyramid',  spec: '1→2→3→4→5',note: '30s rest between rungs · slow and controlled' },
+      { name: 'Deep squat hold',  spec: '3 × 45s',  note: 'Doorframe for balance · builds squat mobility' },
+      { name: 'Full stretch flow', spec: '5 min',   note: "Hip flexors · thoracic spine · forward fold · spinal twist" },
     ]
   },
 ];
@@ -1058,7 +1046,7 @@ function renderToday() {
       <div class="dark-card" style="margin-bottom:16px">
         <div class="card-eyebrow">${state.todayLocation === 'gym' ? 'GYM' : 'HOME'} · ${workout.id}</div>
         <div class="card-title">${workout.name}</div>
-        <div class="card-subtitle">${workout.focus}</div>
+        <div class="card-subtitle">⏱ ${workout.focus}</div>
       </div>
 
       <div class="workout-exercise-list">${exerciseList}</div>
