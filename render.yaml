@@ -1,9 +1,11 @@
 services:
   - type: web
     name: peak42
-    env: node
+    runtime: node
     buildCommand: npm install
     startCommand: node server.js
     envVars:
       - key: MONGODB_URI
         sync: false
+      - key: NODE_VERSION
+        value: 20
