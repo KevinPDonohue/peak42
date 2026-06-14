@@ -952,8 +952,43 @@ let state = (() => {
   return defaultState();
 })();
 
+// Debounced server sync — writes after 800ms of inactivity
+let syncTimer = null;
+function scheduleSync() {
+  clearTimeout(syncTimer);
+  syncTimer = setTimeout(syncToServer, 800);
+}
+
+async function syncToServer() {
+  try {
+    await fetch('/api/state', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(state),
+    });
+  } catch(e) {
+    console.warn('Sync failed (offline?):', e);
+  }
+}
+
 function save() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  scheduleSync();
+}
+
+// On load: pull from server and merge (server wins for logs/metrics)
+async function loadFromServer() {
+  try {
+    const res = await fetch('/api/state');
+    if (!res.ok) return;
+    const remote = await res.json();
+    if (remote && Object.keys(remote).length > 0) {
+      state = { ...defaultState(), ...remote };
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    }
+  } catch(e) {
+    console.warn('Could not reach server, using localStorage:', e);
+  }
 }
 
 // ═══════════════════════════════════════
@@ -1653,8 +1688,11 @@ document.getElementById('bottom-nav').onclick = (e) => {
 // INIT
 // ═══════════════════════════════════════
 
-checkNewWeek();
-renderGym();
+(async () => {
+  await loadFromServer();
+  checkNewWeek();
+  renderGym();
+})();
 </script>
 </body>
 </html>

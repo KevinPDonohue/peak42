@@ -1,7 +1,9 @@
 services:
   - type: web
     name: peak42
-    env: static
-    staticPublishPath: .
-    buildCommand: echo 'static'
-    pullRequestPreviewsEnabled: false
+    env: node
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: MONGODB_URI
+        sync: false
