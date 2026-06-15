@@ -667,10 +667,10 @@ const GYM_WORKOUTS = [
     name: 'Bench Day',
     focus: '~20 min · Bench press focus',
     exercises: [
-      { name: 'Row warm-up',      spec: '2 min',   note: 'Easy pace — loosen up shoulders and back' },
-      { name: 'Bench Press',      spec: '3 × 5',   note: 'Heavy · 2 min rest between sets · this is your main lift' },
-      { name: 'Cable Row',        spec: '2 × 10',  note: 'Balance the pressing · superset with bench rest if possible' },
-      { name: 'Push-up max set',  spec: '1 × max', note: 'Record reps — benchmark marker · do this fresh' },
+      { name: 'Row warm-up',       spec: '2 min',   note: 'Easy pace — loosen up shoulders and back' },
+      { name: 'Bench Press',       spec: '3 × 5',   note: '200 lbs · 2 min rest · superset rest with cable rows · bump 5 lbs when all 3 sets feel smooth' },
+      { name: 'Cable Row',         spec: '2 × 10',  note: '120 lbs · do during bench rest periods · squeeze at the top' },
+      { name: 'Push-up max set',   spec: '1 × 20+', note: 'Target 20+ reps · controlled pace · record count' },
     ]
   },
   {
@@ -678,10 +678,10 @@ const GYM_WORKOUTS = [
     name: 'Squat Day',
     focus: '~20 min · Squat focus',
     exercises: [
-      { name: 'Air bike warm-up', spec: '2 min',   note: 'Easy pace — get legs warm' },
-      { name: 'Back Squat',       spec: '3 × 5',   note: 'Heavy · 2 min rest · drive through the floor' },
-      { name: 'Romanian Deadlift',spec: '2 × 8',   note: 'Moderate weight · hamstring and posterior chain' },
-      { name: 'Plank hold',       spec: '1 × max', note: 'Stop when hips drop · record time' },
+      { name: 'Air bike warm-up',  spec: '2 min',   note: 'Easy pace — get legs warm' },
+      { name: 'Back Squat',        spec: '3 × 5',   note: '230 lbs · 2 min rest · drive through the floor · bump 5 lbs when all 3 sets feel smooth' },
+      { name: 'KB Romanian Deadlift', spec: '2 × 8', note: '53 lbs each hand · hinge at the hips · slow lower · posterior chain' },
+      { name: 'Plank hold',        spec: '2 × 45s', note: 'Squeeze glutes and core · rest 45s between · record if you beat 45s' },
     ]
   },
   {
@@ -689,10 +689,10 @@ const GYM_WORKOUTS = [
     name: 'Test Day',
     focus: '~20 min · Pull-ups + row benchmark',
     exercises: [
-      { name: 'Row warm-up',      spec: '3 min',   note: 'Easy 500m — settle into your stroke' },
-      { name: 'Pull-up max set',  spec: '1 × max', note: 'Dead hang start · full ROM · record reps — benchmark' },
-      { name: 'Bench Press',      spec: '2 × 6',   note: 'Moderate weight — not max effort' },
-      { name: 'Row 500m hard',    spec: '1 × test',note: 'Hard effort · note your split — extrapolates to 2000m pace' },
+      { name: 'Row warm-up',       spec: '3 min',   note: 'Easy 500m — settle into your stroke and technique' },
+      { name: 'Pull-up max set',   spec: '1 × 4+',  note: 'Dead hang start · full ROM · target 4+ reps · record count' },
+      { name: 'Bench Press',       spec: '2 × 6',   note: '185 lbs · moderate effort — not max today' },
+      { name: 'Row 500m hard',     spec: '1 × test',note: 'Hard effort · note your split time — extrapolates to 2000m pace' },
     ]
   },
 ];
@@ -702,34 +702,34 @@ const HOME_WORKOUTS = [
   {
     id: 'H1',
     name: 'Push Day',
-    focus: '~20 min · Push-ups + GTG pull-ups',
+    focus: '~20 min · Strength + core + flexibility',
     exercises: [
-      { name: 'GTG Pull-ups',     spec: '3 × 2',    note: 'Easy sets · stop well short of failure · 60s rest' },
-      { name: 'Push-up sets',     spec: '4 × submax',note: 'Stop 3 reps short of failure · 45s rest between sets' },
-      { name: 'Plank hold',       spec: '2 × max',  note: 'Stop when hips drop · rest 45s between' },
-      { name: 'Hip flexor stretch',spec: '2 × 60s', note: 'Each side — critical for squat depth' },
+      { name: 'GTG Pull-ups',      spec: '3 × 4',   note: 'Stop 1 short of failure · 60s rest · easy and controlled' },
+      { name: 'Push-ups',          spec: '4 × 20',  note: 'Controlled pace · chest to floor · 45s rest between sets' },
+      { name: 'Plank hold',        spec: '2 × 45s', note: 'Squeeze glutes and core · rest 45s between' },
+      { name: 'Hip flexor stretch',spec: '2 × 45s', note: 'Each side · lunge position · critical for squat depth' },
     ]
   },
   {
     id: 'H2',
     name: 'Pull Day',
-    focus: '~20 min · Pull-ups + dumbbell rows',
+    focus: '~20 min · Strength + core + flexibility',
     exercises: [
-      { name: 'GTG Pull-ups',     spec: '3 × 2',    note: 'Grease the groove — easy · 60s rest' },
-      { name: 'Max pull-up set',  spec: '1 × max',  note: 'Dead hang · full ROM · record reps — benchmark' },
-      { name: 'DB Bent-over Row', spec: '3 × 10',   note: 'Each arm · moderate weight · builds row strength' },
-      { name: 'Push-ups',         spec: '2 × 15',   note: 'Maintenance volume · controlled pace' },
+      { name: 'GTG Pull-ups',      spec: '3 × 4',   note: 'Stop 1 short of failure · 60s rest' },
+      { name: 'Chin-ups',          spec: '3 × 4',   note: 'Underhand grip · different stimulus than pull-ups · 90s rest' },
+      { name: 'Hollow body hold',  spec: '2 × 30s', note: 'Lower back pressed to floor · legs straight · core stability' },
+      { name: 'Thoracic rotation', spec: '2 × 45s', note: 'Each side · thread the needle · opens chest for bench' },
     ]
   },
   {
     id: 'H3',
     name: 'Flow Day',
-    focus: '~20 min · Mobility + volume',
+    focus: '~20 min · Strength + core + flexibility',
     exercises: [
-      { name: 'GTG Pull-ups',     spec: '2 × 2',    note: 'Light touch · easy' },
-      { name: 'Push-up pyramid',  spec: '1→2→3→4→5',note: '30s rest between rungs · slow and controlled' },
-      { name: 'Deep squat hold',  spec: '3 × 45s',  note: 'Doorframe for balance · builds squat mobility' },
-      { name: 'Full stretch flow', spec: '5 min',   note: "Hip flexors · thoracic spine · forward fold · spinal twist" },
+      { name: 'GTG Pull-ups',      spec: '2 × 4',   note: 'Light · easy · just moving' },
+      { name: 'Push-up pyramid',   spec: '5→10→15→10→5', note: '30s rest between rungs · slow and controlled' },
+      { name: 'Dead bug',          spec: '3 × 10',  note: 'Each side · opposite arm and leg · lower back stays flat' },
+      { name: 'Full stretch flow', spec: '5 min',   note: 'Hip flexors · forward fold · spinal twist · thoracic spine' },
     ]
   },
 ];
